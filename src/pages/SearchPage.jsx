@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const SearchPage = () => {
-  const [dogIds, setDogIds] = useState([]);
+  const [setDogIds] = useState([]);
   const [breedFilter, setBreedFilter] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
   const [favorites, setFavorites] = useState([]);
@@ -45,7 +45,7 @@ const SearchPage = () => {
       );
       let zipCodes = dogResponse.data.map(dog => dog.zip_code);
       console.log(zipCodes, zipData);
-      const temp = zipCodes.filter(item1 => 
+      const temp = zipCodes.filter(item1 =>
         zipData.some(item2 => item2 === item1)
       );
       console.log(temp);
